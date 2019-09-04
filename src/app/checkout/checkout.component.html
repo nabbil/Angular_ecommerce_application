@@ -1,0 +1,32 @@
+<p>checkout works!</p>
+
+
+<form [formGroup]="shippingForm" (ngSubmit)="placeOrder()">
+  
+        <label>
+          Name:
+          <input type="text" formControlName="name">
+        </label>
+      
+        <label>
+          Address:
+          <input type="text" formControlName="address">
+        </label>
+
+        <label>
+            City:
+            <input type="text" formControlName="city">
+        </label>
+        <button type="submit" class="btn btn-primary" >Place Order</button>
+      
+</form>
+
+<button (click)="checkout($event)">
+  
+        Buy for ${{ amount  }}.00
+      
+      </button>
+      
+      <hr>
+      
+      <div *ngIf="loading">Loading....</div>
